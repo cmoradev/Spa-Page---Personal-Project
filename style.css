@@ -1,10 +1,15 @@
 /* ============================================================================================================
    GOLBAL
 ============================================================================================================= */
+*{ /*Reset*/
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  width: 100vw;
+  height: 100vh;
+}
 
-
-
-CSS
+/*accesibility*/
     #skip_to {
       position: fixed;
       left: 0;
@@ -15,6 +20,35 @@ CSS
       opacity: 1;
     }
 
+.container{
+  width:100vw;
+  height: 100vh;
+}
+
+/* ====================================
+   CUSTOM PROPERTIES
+===================================== */
+
+:root {
+  --field-drab: #64572A;
+  --mango-tango: #F3854A;
+  --sunray: #EDAF5A;
+  --macaroni: #FEB97E;
+  --caramel: #FDD8A1;
+  --general-text: 'IBM Plex Sans', sans-serif;
+  --title-text: 'Josefin Sans', sans-serif;
+}
+
+
+
 /* ============================================================================================================
    HOME PAGE
 ============================================================================================================= */
+
+img .homeimage {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  width: 500px;
+}
