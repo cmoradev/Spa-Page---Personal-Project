@@ -40,6 +40,40 @@
 }
 
 
+/* ====================================
+   UTILITY CLASSES
+===================================== */
+.title-bold{
+  font-family: 'Josefin Sans',sans-serif;
+  font-weight: bold;
+}
+
+.title-semibold{
+  font-family: 'Josefin Sans',sans-serif;
+  font-weight: semibold;
+}
+
+.title-regular{
+  font-family: 'Josefin Sans',sans-serif;
+  font-weight: regular;
+}
+
+.general-text-bold{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+}
+
+.general-text-semibold{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: semibold;
+}
+
+.general-text-regular{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: regular;
+}
+
+
 
 /* ============================================================================================================
    HOME PAGE
