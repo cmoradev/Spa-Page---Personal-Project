@@ -1,5 +1,5 @@
 /* ============================================================================================================
-   GOLBAL
+   GLOBAL
 ============================================================================================================= */
 *{ /*Reset*/
   box-sizing: border-box;
@@ -11,6 +11,7 @@ body{
   width: 100%;
   min-height: 100%;
 }
+
 
 /*accesibility*/
     #skip_to {
@@ -44,37 +45,37 @@ body{
 ===================================== */
 .title-bold{
   font-family: 'Josefin Sans',sans-serif;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .title-semibold{
   font-family: 'Josefin Sans',sans-serif;
-  font-weight: semibold;
+  font-weight: 600;
 }
 
 .title-regular{
   font-family: 'Josefin Sans',sans-serif;
-  font-weight: regular;
+  font-weight: 400;
 }
 
 .general-text-bold{
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .general-text-semibold{
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: semibold;
+  font-weight: 600;
 }
 
 .general-text-regular{
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: regular;
+  font-weight: 400;
 }
 
+/*===================================== */
 
 .main{        /*Background can take all the space avaliable*/
-  display: block;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
@@ -83,19 +84,28 @@ body{
 }
 
 .header{
-  position: absolute;
+  /* position: fixed; */
   z-index: 1; /*Text in front of Background*/
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+ 
+}
+
+.container-home{
+  position: relative;
+}
+
+.nav-bar{
+  font-size: 31px;
 }
 
 /* ============================================================================================================
    HOME PAGE
 ============================================================================================================= */
-.container-home::after{ /*Only way to set background*/
+.showcase-home::after{ /*Only way to set background-Traversy Media*/
   content:'';
   height: 100vh;
   width:100%;
+  position: absolute; /*Get text in front of background*/
+  z-index: -1;
   background-image: url(img/camille-brodard-VxAwTeiqDao-unsplash_Home.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -104,9 +114,13 @@ body{
   margin-top:-2.4rem; /*Background move to cover the entire space*/
 }
 
-.showcase-home{
-  position: absolute;
-  z-index: 1; /*Text in front of Background*/
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+
+.contant-main{
+  
 }
+
+
+/*CINDYYYYYY
+el nav bar no se muestra despues que aplicaste cambios por absolute y relative 
+Todavia no encuentro la forma de centrar con margenes iguales a los lados
+deberia ir poniendo formato a los textos para avanzar en algo*/
