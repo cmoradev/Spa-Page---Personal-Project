@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin:0;
   padding:0;
+  font-size:16px;
 }
 
 body{
@@ -35,8 +36,8 @@ body{
   --sunray: #EDAF5A;
   --macaroni: #FEB97E;
   --caramel: #FDD8A1;
-  --general-text: 'IBM Plex Sans', sans-serif;
-  --title-text: 'Josefin Sans', sans-serif;
+  --general-text:'IBM Plex Sans', sans-serif;
+  --title-text:'Josefin Sans', sans-serif;
 }
 
 
@@ -44,38 +45,42 @@ body{
    UTILITY CLASSES
 ===================================== */
 .title-bold{
-  font-family: 'Josefin Sans',sans-serif;
+  font-family:  var(--title-text);
   font-weight: 700;
+  font-size: 30px;
 }
 
 .title-semibold{
-  font-family: 'Josefin Sans',sans-serif;
+  font-family: var(--title-text);
   font-weight: 600;
+  font-size: 30px;
 }
 
 .title-regular{
-  font-family: 'Josefin Sans',sans-serif;
+  font-family: var(--title-text);
   font-weight: 400;
+  font-size: 30px;
 }
 
 .general-text-bold{
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--general-text);
   font-weight: 700;
 }
 
 .general-text-semibold{
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--general-text);
   font-weight: 600;
 }
 
 .general-text-regular{
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--general-text);
   font-weight: 400;
 }
 
 /*===================================== */
 
 .main{        /*Background can take all the space avaliable*/
+  display: flex;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
@@ -83,44 +88,47 @@ body{
   margin: 0px auto; /*Background responsive */
 }
 
-.header{
-  /* position: fixed; */
-  z-index: 1; /*Text in front of Background*/
- 
-}
-
-.container-home{
-  position: relative;
-}
-
-.nav-bar{
-  font-size: 31px;
-}
 
 /* ============================================================================================================
    HOME PAGE
 ============================================================================================================= */
-.showcase-home::after{ /*Only way to set background-Traversy Media*/
-  content:'';
-  height: 100vh;
-  width:100%;
-  position: absolute; /*Get text in front of background*/
-  z-index: -1;
-  background-image: url(img/camille-brodard-VxAwTeiqDao-unsplash_Home.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: block; 
-  margin-top:-2.4rem; /*Background move to cover the entire space*/
+.header{
+  /* position: fixed; */
+  z-index: 1; /*Text in front of Background*/ 
 }
 
-
-.contant-main{
-  
+.nav-bar{
+  padding-top:6.25rem;
+  display: flex;
+  justify-content: space-between; 
 }
 
+.nav-bar a {
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.container-home{
+  position: relative;
+  background-color: aqua;
+  opacity: 0.5;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0px auto; /*Background responsive */
+}
+
+.title-main{
+  background-color: red;
+  width: 23rem;
+  height: 11rem;
+  font-size: 3.75rem;
+  text-align: center;
+  margin: 5rem 0 0 39.5rem;
+}
 
 /*CINDYYYYYY
-el nav bar no se muestra despues que aplicaste cambios por absolute y relative 
 Todavia no encuentro la forma de centrar con margenes iguales a los lados
-deberia ir poniendo formato a los textos para avanzar en algo*/
+Puse formato a texto pero no se aplica, probe importando Google font para el CSS, el problema debe estar en las Utility classes
+
+Focus no esta trabajando*/
