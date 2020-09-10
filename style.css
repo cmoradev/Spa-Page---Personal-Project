@@ -1,3 +1,4 @@
+
 /* ============================================================================================================
    GLOBAL
 ============================================================================================================= */
@@ -119,6 +120,7 @@ body{
 }
 
 .title-main{
+  position: absolute;
   background-color: red;
   width: 23rem;
   height: 11rem;
@@ -127,8 +129,27 @@ body{
   margin: 5rem 0 0 39.5rem;
 }
 
-/*CINDYYYYYY
-Todavia no encuentro la forma de centrar con margenes iguales a los lados
-Puse formato a texto pero no se aplica, probe importando Google font para el CSS, el problema debe estar en las Utility classes
+.contact-main{
+  position: absolute;
+  background-color: var(--caramel);
+  border-radius: 0 0 5px 5px;
+  padding: 0.75rem 3.6rem 0.75rem 3.6rem;
+  text-align: center;
+  margin: -8rem 0 0 47.8rem;
+}
 
-Focus no esta trabajando*/
+.contact-main p{
+  font-size: 0.75rem;
+}
+
+.chat{
+  position: fixed;
+  background-color: var(--caramel);
+  border-radius: 5px;
+  padding: 0.75rem 6.5rem;
+  text-align: center;
+  margin: 34.9rem 0 0 62.5rem;
+}
+
+/*CINDYYYYYY
+Background image - buscar forma que no agregue &nbsp; al codigo*/
