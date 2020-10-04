@@ -23,28 +23,59 @@
 </head>
 
 <body>
-  <main>
+
+<!--============================================================================================================
+   HOME PAGE
+============================================================================================================= -->
+  <main class="main" id="home">
     <div class="contact">
-      CONTACT
+      <div class="contact-main general-text-bold">
+        <p>(506) 2888-0000</p> 
+        <p>Call Now | WhatsApp</p>
+      </div>
     </div>
-  <header>
-    HEADER
+
+  <header class="header">
+    <nav class="nav-bar" aria-labelledby="mainmenulabel" >
+      
+      <a href="#home" id="mainmenulabel" class="title-bold visuallyhidden">Heiwa Spa Esthetic</a>
+      <a href="#services" id="mainmenulabel" class="title-bold visuallyhidden" >Services</a>
+      <a href="#special-offers" id="mainmenulabel" class="title-bold visuallyhidden">Special Offers</a>
+      <a href="#contact" id="mainmenulabel" class="title-bold visuallyhidden">Contact</a>
+    
+  </nav>
   </header>
   <div class="title">
-    <h1>
-      H1
-    </h1>
+    <h1 class="title-main title-semibold">Face & Body Esthetic Treatments</h1>
   </div>
   
-  <div class="chat">
-    CHAT
+
+  
+
+  <div id="chat" class=" chat chat-app general-text-bold" alt="Chat application for reservations or questions" tabindex="0" ></div>
+  <div id="chat-box">
+  <div id="chat-bar">
+    <p>Online</p>
+    <span class="fa fa-window-close" tabindex="0" alt="close chat application"></span>
   </div>
+  <div id="chat-messages">
+    <ul id="messages"></ul>
+  </div>
+  <div id="chat-input">
+    <form action="">
+      <input type="text" id="message" placeholder="Escribe tu mensaje aquí" />
+    </form>
+  </div>
+  </div>
+
+
   </main>
   
 
 
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
