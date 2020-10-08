@@ -145,88 +145,49 @@ header{
   text-align: center;
 }
 
+/*https://stackoverflow.com/questions/18749276/css-on-hover-show-another-element*/
+
+.content{
+  display: inline-block;
+}
 .chat{
   background-color:gray;
   grid-area:chat;
   margin-right: 25px;
+  display: block;
+  color: red;
 }
 
+ #chat:active{
+  display:block;
+  z-index: 1;
+}
+
+
+
 #chat {
+  display:none;
   background-color: #00897b;
   color: #fff;
   cursor: pointer;
-  height: 28px;
-  text-align: center;
-  width: 160px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-#chat-box {
-  border: 1px solid rgba(0,0,0,0.4);
   height: 300px;
+  text-align: center;
+  width: 260px;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 260px;
-}
-#chat-bar {
-  color: #fff;
-  background: #00897b;
-  width: 100%;
-  height: 35px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
-  align-items: center;
+  border: 1px solid rgba(0,0,0,0.4);
 }
 
-#chat-bar p {
-  line-height: 35px;
-  margin: 0;
+.chat:active{
+  display:none
 }
 
-#chat-bar span {
-  line-height: 35px;
-  cursor: pointer;
-}
 
-#chat-messages {
-  background: #fff;
-  height: 230px;
-  max-height: 230px;
-  width: 100%;
-  border-bottom: 0.5px solid rgba(0,0,0,0.3);
-  overflow: auto;
-  font-size: 12px;
-}
 
-#chat-input {
-  height: 35px;
-  width: 100%;
-  display: flex;
-  font-size: 12px;
-}
-#chat-input form {
-  width: 100%;
-}
 
-#chat-input form input {
-  width: 100%;
-  height: 100%;
-}
 
-#messages {
-  padding: 5px;
-}
 
-#messages li {
-  list-style-type:none;
-  display: block;
-  border-bottom: 1px solid rgba(220,220,220,0.6);
-  padding-bottom: 3px;
-  margin-bottom: 5px
-}
 
 
 @media screen and (max-width:480px){
