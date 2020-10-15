@@ -67,9 +67,11 @@ body{
 
 /*===================================== */
 
+/* ============================================================================================================
+   HOME PAGE
+============================================================================================================= */
 
-
-main{
+.main-home{
   background-image: url(img/camille-brodard-VxAwTeiqDao-unsplash_Home.jpg);
   background-size: cover;
   background-position: center;
@@ -96,9 +98,6 @@ main{
 
 }
 
-/* ============================================================================================================
-   HOME PAGE
-============================================================================================================= */
 .contact{
   grid-area:contact;
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
@@ -146,7 +145,7 @@ header{
 }
 
 /*https://stackoverflow.com/questions/18749276/css-on-hover-show-another-element*/
-
+/*PENDIENTE*/
 .content{
   display: inline-block;
 }
@@ -183,17 +182,82 @@ header{
   display:none
 }
 
+/* ============================================================================================================
+   ABOUT PAGE
+============================================================================================================= */
 
+.main-about{
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 
+  1fr /*para hacer responsive dejar los lados con francion para que se adapte*/
+  repeat(12,minmax(0,80px))     /*Para hacer las columns de XD, se examina cada item y se divide entre las columnsa que ocupa*/
+  1fr
+  ;
+  grid-column-gap: 20px;
+  grid-template-rows: /*ir midiendo cada componente para determinar altura*/
+  90px
+  275px
+  1fr
+  ;
+  grid-template-areas: 
+  " . title title title title . . . . . . . . ."
+  " . text text text text text text text social social social social social social"
+  " . photos photos photos photos photos photos photos photos photos photos photos photos."
+  ;
 
+}
 
+.title-about{
+  grid-area: title;
+  font-size: 1.9rem;
+  color: var(--field-drab);
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
 
+.text-about{
+  grid-area: text;
+  color: var(--field-drab);
+  text-align: justify;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
 
+.text-about p{
+  font-size: 1.2rem;
+}
 
+.social-media{
+  grid-area: social;
+  background: var(--caramel);
+  height:87.6vh; /*NOTE MEDIA QUERY DEFINIR */
+}
+
+.photos-about{
+  grid-area: photos;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.image-about{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/*continuar hacer grid de imagenes responsive*/
 
 @media screen and (max-width:480px){
 
 
-  main{
+  .main-home{
  
   grid-template-areas: 
   " . . . . . . . . . . contact contact contact contact"
