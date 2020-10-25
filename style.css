@@ -16,6 +16,17 @@ body{
   min-height: 100%;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* ====================================
    CUSTOM PROPERTIES
 ===================================== */
@@ -233,32 +244,112 @@ header{
 .social-media{
   grid-area: social;
   background: var(--caramel);
-  height:87.6vh; /*NOTE MEDIA QUERY DEFINIR */
+  height:87.6vh;
 }
 
-.photos-about{
+
+.social-icon{
+  width: 17.5rem;
+  height: 15rem;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  margin-left: 12.5rem;
+}
+
+.social-icon-a,
+.social-icon-b{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top:1.5rem;
+}
+
+.social-icon-a a,
+.social-icon-b a{
+  text-decoration: none;
+  padding-left: 5%;
+}
+
+
+.fab{
+  font-size: 2rem;
+  color: var(--field-drab);
+  transition: all 1000ms; /*Effect to ease hover*/
+}
+
+.fab:hover{
+  color: var(--mango-tango);
+}
+
+/*container tooltip*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+/*Tooltip Body*/
+.tooltip .tiptext {
+  visibility: hidden;
+  width: 50px;
+  font-size: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 6px 0;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+/*Triangle*/
+.tooltip .tiptext::after {
+  content: "";
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+}
+.tooltip:hover .tiptext {
+  visibility: visible;
+}
+/*position*/
+.tooltip.top .tiptext{
+  margin-left: -25px;
+  bottom: 150%;
+  left: 50%;
+}
+/*Triangle*/
+.tooltip.top .tiptext::after{ 
+  margin-left: -5px;
+  top: 100%;
+  left: 50%;
+  border-color: #2E2E2E transparent transparent transparent;
+}
+
+
+
+
+
+.photos-about{ /*Grid for photos*/
   grid-area: photos;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 20px;
-  
+  min-height: 0; /*Mantain the photos in the space grid assignated*/
+  min-width: 0;
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
-.image-about{
+.image-about{ /*Fit photos on grid*/
   max-width: 100%;
+  max-height: 99.5%;
   display: block;
   height: auto;
 }
 
-/*continuar hacer grid de imagenes responsive*/
+
 
 @media screen and (max-width:480px){
 
-
   .main-home{
- 
   grid-template-areas: 
   " . . . . . . . . . . contact contact contact contact"
   "header header header header header header header header header header header header header header"
@@ -273,7 +364,40 @@ header{
     ;
     }
 
-  { /* desapear a section from mobile */
-    display:none;
-  }  
+  .main-about{
+
+    grid-template-columns: 
+    1fr /*para hacer responsive dejar los lados con francion para que se adapte*/
+    repeat(12,minmax(0,80px))     /*Para hacer las columns de XD, se examina cada item y se divide entre las columnsa que ocupa*/
+    1fr
+    ;
+    grid-column-gap: 20px;
+    grid-template-rows: /*ir midiendo cada componente para determinar altura*/
+    90px
+    150px
+    100px
+    1fr
+    ;
+    grid-template-areas: 
+    " . title title title title title title title title title title title title ."
+    " . text text text text text text text text text text text text . "
+    " . social social social social social social social social social social social social ."
+    " . photos photos photos photos photos photos photos photos photos photos photos photos ."
+    ;
+  
+  }
+
+
+    /*Medium devices(landscape tablets, 768px and up)*/
+    @media screen and (max-width:992px){
+      .photos-about{
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr;
+      }
+
+     
+    }
+
+
+
 }
