@@ -22,7 +22,7 @@ body{
   height: 1px;
   padding: 0;
   margin: -1px;
-  overflow: hidden;
+  overflow: hidden; /*to prevent scroll bar by default*/
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
@@ -139,6 +139,7 @@ header{
 
 .nav-bar a {
   text-decoration: none;
+  text-align: center;
   font-size: 1.4rem;
   color: var(--black);
 }
@@ -221,6 +222,7 @@ header{
 
 }
 
+
 .title-about{
   grid-area: title;
   font-size: 1.9rem;
@@ -235,10 +237,11 @@ header{
   color: var(--field-drab);
   text-align: justify;
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  margin-bottom:0.5rem;
 }
 
 .text-about p{
-  font-size: 1.2rem;
+  font-size: 2.6  vmin;
 }
 
 .social-media{
@@ -257,7 +260,7 @@ header{
 
 .social-icon-a,
 .social-icon-b{
-  display: flex;
+  display: flex;  
   justify-content: space-around;
   align-items: center;
   padding-top:1.5rem;
@@ -315,16 +318,13 @@ header{
   bottom: 150%;
   left: 50%;
 }
-/*Triangle*/
+/*Triangle toltip*/
 .tooltip.top .tiptext::after{ 
   margin-left: -5px;
   top: 100%;
   left: 50%;
   border-color: #2E2E2E transparent transparent transparent;
 }
-
-
-
 
 
 .photos-about{ /*Grid for photos*/
@@ -335,6 +335,8 @@ header{
   grid-column-gap: 20px;
   min-height: 0; /*Mantain the photos in the space grid assignated*/
   min-width: 0;
+  width: auto;
+  height: auto;
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -345,13 +347,72 @@ header{
   height: auto;
 }
 
+/* ============================================================================================================
+   PRICES PAGE
+============================================================================================================= */
+.main-prices{
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 
+  1fr /*para hacer responsive dejar los lados con francion para que se adapte*/
+  repeat(12,minmax(0,80px))     /*Para hacer las columns de XD, se examina cada item y se divide entre las columnsa que ocupa*/
+  1fr
+  ;
+  grid-column-gap: 20px;
+  grid-template-rows: /*ir midiendo cada componente para determinar altura*/
+  130px
+  1fr
+  ;
+  grid-template-areas: 
+  " . title title title title title title title prices prices prices prices prices ."
+  " . text text text text text text text prices prices prices prices prices . "
+  ;
+
+}
+
+.title-section{
+  grid-area: title;
+  background-color: violet;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  
+}
+
+.title-prices{
+  font-size: 1.9rem;
+  padding-top: 2.5rem;
+  color: var(--field-drab);
+}
+
+.prices-text{
+  color: var(--field-drab);
+}
 
 
-@media screen and (max-width:480px){
+.info-prices{
+  grid-area: text;
+  background-color: lightblue;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.prices{
+  grid-area: prices;
+  background-color: lightcoral;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+/* ============================================================================================================
+   MEDIA QUERY 
+============================================================================================================= */
+
+
+@media screen and (max-width:600px)  {
 
   .main-home{
   grid-template-areas: 
-  " . . . . . . . . . . contact contact contact contact"
+  " . . . . . . . . contact contact contact contact contact contact"
   "header header header header header header header header header header header header header header"
   "title title title title title title title title title  title title title title title"
   ". . . . . . . . . . . . . chat"
@@ -360,44 +421,95 @@ header{
     35px
     35px
     1fr
-    50px
+    1fr
     ;
     }
 
-  .main-about{
+  .title-main{
+    color:var(--field-drab);
+  }
 
-    grid-template-columns: 
-    1fr /*para hacer responsive dejar los lados con francion para que se adapte*/
-    repeat(12,minmax(0,80px))     /*Para hacer las columns de XD, se examina cada item y se divide entre las columnsa que ocupa*/
-    1fr
-    ;
-    grid-column-gap: 20px;
+  .contact-main{
+    height: 34px;
+  }
+
+  .contact-main p{
+    font-size: 0.7rem;
+  }
+
+  .nav-bar a {
+    font-size: 0.85rem;
+    
+  }
+
+
+  .main-about{
     grid-template-rows: /*ir midiendo cada componente para determinar altura*/
-    90px
-    150px
-    100px
+    50px
+    2fr
+    1fr
     1fr
     ;
     grid-template-areas: 
     " . title title title title title title title title title title title title ."
     " . text text text text text text text text text text text text . "
     " . social social social social social social social social social social social social ."
-    " . photos photos photos photos photos photos photos photos photos photos photos photos ."
+    " photos photos photos photos photos photos photos photos photos photos photos photos photos photos"
     ;
-  
   }
 
+  .social-icon{ 
+      padding: 1rem;
+    }
 
-    /*Medium devices(landscape tablets, 768px and up)*/
-    @media screen and (max-width:992px){
-      .photos-about{
-        grid-template-columns: 1fr 1fr ;
-        grid-template-rows: 1fr 1fr;
-      }
+    .photos-about{
+      grid-template-columns: 1fr 1fr ;
+      grid-template-rows: 1fr 1fr;
+      display:inline-block;
+      height: auto;
+    }
 
-     
+    .main-prices{
+      background-size: cover;
+      background-position: center;
+      height: 150vh;
+      grid-column-gap: 20px;
+      grid-template-rows: /*ir midiendo cada componente para determinar altura*/
+      50px
+      200px
+      1fr
+      ;
+      grid-template-areas: 
+      " . title title title title title title title title title title title title ."
+      " . text text text text text text text text text text text text . "
+      " . prices prices prices prices prices prices prices prices prices prices prices prices . "
+      ;
+    
     }
 
 
-
 }
+
+    
+    @media screen and (max-width:992px){
+
+      .social-icon{ 
+        width: auto;
+        height: auto;
+        margin: 0 0 0 0;
+        padding: 1rem;
+      }
+      
+      .photos-about{
+        height: 85%;
+      }
+
+      .image-about{ /*Fit photos on grid*/
+        max-width: 100%;
+        max-height: 99.5%;
+        display: block;
+        height: auto;
+      }
+
+
+    }
